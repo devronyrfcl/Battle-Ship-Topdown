@@ -2629,12 +2629,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 5261903847546862241}
   enemyBulletPrefab: {fileID: 6014516474061214980, guid: 0ae00a63ba84f1144a692a1f4144f406, type: 3}
-  fireRate: 0.1
-  shotsBeforeReload: 5
+  fireRate: 0.2
+  shotsBeforeReload: 3
   reloadTime: 2
   shootingRange: 48
   healthImage: {fileID: 8055784354878728590}
-  maxHealth: 25
   bulletHitParticlePrefab: {fileID: 1026642433091512, guid: ed67c2cb8e3a7fb418c6fbb1b001dce2, type: 3}
   missileHitParticlePrefab: {fileID: 1277154925287174, guid: 3b517eddec185dd4a830743a742ad00b, type: 3}
   deathSound: {fileID: 160962869495055198}

@@ -19,7 +19,7 @@ public class TankGunShootManager : MonoBehaviour
 
     [Header("Health")]
     public Image healthImage;
-    public int maxHealth = 15;
+    private int maxHealth = 20;
 
     [Header("Audio")]
     public AudioSource deathSound;

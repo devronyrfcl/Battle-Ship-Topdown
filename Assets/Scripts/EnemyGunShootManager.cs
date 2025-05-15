@@ -16,7 +16,7 @@ public class EnemyGunShootManager : MonoBehaviour
 
     [Header("Health Settings")]
     public Image healthImage;
-    public int maxHealth = 10;
+    private int maxHealth = 10;
 
     [Header("Hit Particles")]
     public GameObject bulletHitParticlePrefab;

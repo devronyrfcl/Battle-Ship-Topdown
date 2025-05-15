@@ -3250,6 +3250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 125662189}
   - component: {fileID: 125662188}
+  - component: {fileID: 125662190}
   m_Layer: 0
   m_Name: Tile Manager
   m_TagString: Untagged
@@ -3287,6 +3288,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &125662190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125662187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7883ef8a48dcf80419dcddd982abb5fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pausePanel: {fileID: 1468450749}
 --- !u!1 &129061954
 GameObject:
   m_ObjectHideFlags: 0
@@ -4108,10 +4122,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1468450749}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 125662190}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
+        m_MethodName: ContinueGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5670,7 +5684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 712dbe8a5b1d0db4ca4f99ce33bf0333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 500
+  maxHealth: 100
   currentHealth: 0
   healthText: {fileID: 695612218}
   healthSlider: {fileID: 1148103843}
@@ -6583,7 +6597,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 289476815}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 125662190}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
+        m_MethodName: GoToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &289476814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10894,17 +10920,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1468450749}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 125662190}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &452477553
 MonoBehaviour:
@@ -22563,7 +22589,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1019441209}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 125662190}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
+        m_MethodName: RestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1019441208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25739,7 +25777,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 27.13, y: -86.59961}
+  m_AnchoredPosition: {x: 27.13, y: -169}
   m_SizeDelta: {x: 694.91785, y: 46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1148103842
@@ -33236,7 +33274,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -57.80017, y: -83.70001}
+  m_AnchoredPosition: {x: -57.80017, y: -158}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1.0000001, y: 0.5}
 --- !u!114 &1531505291
@@ -40076,7 +40114,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 0.9529412, g: 0.9372549, b: 0.8784314, a: 1}
-  m_Intensity: 0.88
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -42462,7 +42500,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 24.300781, y: -91}
+  m_AnchoredPosition: {x: 24.300781, y: -145}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1874518158
@@ -46207,15 +46245,15 @@ MonoBehaviour:
     bulletPrefab: {fileID: 6014516474061214980, guid: b285fafdd0908a44ea24f02c6bbb559d, type: 3}
     fireRate: 0.15
     fireTimer: 0
-  bulletCount: 1000
+  bulletCount: 500
   bulletsPerMagazine: 100
-  bulletReloadTime: 2.5
+  bulletReloadTime: 2
   missiles:
   - firePoint: {fileID: 449459684}
     missilePrefab: {fileID: 3095421851815548308, guid: b184b33326f121342a0bad48296f8750, type: 3}
   - firePoint: {fileID: 756688950}
     missilePrefab: {fileID: 3095421851815548308, guid: b184b33326f121342a0bad48296f8750, type: 3}
-  missileCount: 100
+  missileCount: 10
   missileReloadTime: 1
   bulletText: {fileID: 767673017}
   missileText: {fileID: 86382850}
